@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">App-Pelaporan</string>
+    <string name="username">Raull</string>
+    <string name="keterangan">Ada 4 update infromasi terbaru buat kamu</string>
+    <string name="keterangan1">ayo berikan laporan anda mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
+    <string name="laporkan">Laporkan !</string>
+    <string name="berita1">Pemerintah Kota Pekanbaru kembali memperbaiki jalan bangau sakti setelah ada laporan dari warga</string>
+    <string name="tgl1">Dec 30 2021   EuroNews   4 min read</string>
+    <string name="beranda">Beranda</string>
+    <string name="laporan">Laporan</string>
+    <string name="saran">Saran</string>
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+    <string name="ketmasuk">Bagikan aspirasi anda sekarang!</string>
+    <string name="ketdaftar">Silahkan isi data diri anda</string>
+    <string name="dafnama">Masukkan Nama Lengkap</string>
+    <string name="dafnotelp">Masukkan Nomor Telpon</string>
+    <string name="dafalamat">Masukkan Alamat Anda</string>
+    <string name="dafpassword">Masukkan Password</string>
+</resources>
