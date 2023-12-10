@@ -4,6 +4,8 @@
     <string name="keterangan">Ada 4 update infromasi terbaru buat kamu</string>
     <string name="keterangan1">ayo berikan laporan anda mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
     <string name="laporkan">Laporkan !</string>
+    <string name="ketlaporan">Daftar laporan anda</string>
+    <string name="ketsaran">Daftar saran anda</string>
     <string name="berita1">Pemerintah Kota Pekanbaru kembali memperbaiki jalan bangau sakti setelah ada laporan dari warga</string>
     <string name="tgl1">Dec 30 2021   EuroNews   4 min read</string>
     <string name="beranda">Beranda</string>
@@ -17,4 +19,26 @@
     <string name="dafnotelp">Masukkan Nomor Telpon</string>
     <string name="dafalamat">Masukkan Alamat Anda</string>
     <string name="dafpassword">Masukkan Password</string>
+    <string name="jdlLaporan">Judul Laporan</string>
+    <string name="jdlSaran">Judul Saran</string>
+    <string name="tglLaporan">30 Des 2023</string>
+    <string name="tglsaran">30 Des 2023</string>
+    <string name="descLaporan">Ada jalan rusak di jl. Bangau sakti panam, jalan sudah sekitar berbulan-bulan tidak diperbaiki, mohon di perbaiki</string>
+    <string name="descSaran">Saya ada ide untuk di bangun sebuah jpo di jalan Diponegoro tepatnya di depan arya duta untuk mempermudah pejalan kaki</string>
+    <string name="tambahlaporan">Tambah Laporan</string>
+    <string name="tambahsaran">Tambah Saran</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buatlaporan">Buat Laporan</string>
+    <string name="buatsaran">Buat Saran</string>
+    <string name="uploadfoto">Upload Foto</string>
+    <string name="txuploadfoto">Masukkan Foto</string>
+    <string name="detaillaporan">Detail Laporan</string>
+    <string name="txdetaillaporan">Masukkan Detail Laporan</string>
+    <string name="inpsaran">Masukkan Judul Saran</string>
+    <string name="inplaporan">Masukkan Judul Laporan</string>
+    <string name="detailsaran">Detail Saran</string>
+    <string name="txdetailsaran">Masukkan Detail Saran</string>
+    <string name="tambah">Tambah</string>
+
 </resources>

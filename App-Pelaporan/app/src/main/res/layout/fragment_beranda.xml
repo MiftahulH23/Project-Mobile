@@ -5,15 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="20dp"
-    android:paddingHorizontal="25dp"
-    tools:context=".HomeActivity">
+    tools:context=".BerandaFragment">
 
     <include
         android:id="@+id/header"
         layout="@layout/header"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/card1"
+        app:layout_constraintBottom_toTopOf="@+id/card1"
         />
     <RelativeLayout
         android:id="@+id/card1"
@@ -154,14 +152,6 @@
             android:layout_marginTop="12dp"
             />
     </RelativeLayout>
-    <include
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        layout="@layout/navbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="10dp"
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
