@@ -14,7 +14,7 @@
         />
     <item
         android:id="@+id/tab_saran"
-        android:icon="@drawable/ic_saran"
+        android:icon="@drawable/ic_lamp"
         android:title="@string/saran"
         android:contentDescription="@string/saran"
         />

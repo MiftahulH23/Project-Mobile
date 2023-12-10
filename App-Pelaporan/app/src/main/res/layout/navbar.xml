@@ -83,7 +83,7 @@
                 android:id="@+id/ic_saran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_saran"
+                android:src="@drawable/ic_lamp"
                 android:layout_centerHorizontal="true"
                 />
             <TextView

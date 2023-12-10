@@ -40,7 +40,7 @@
 
     <EditText
         android:id="@+id/edt_jdllaporan"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded"
@@ -67,7 +67,7 @@
 
     <EditText
         android:id="@+id/edt_uploadfoto"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded"
@@ -93,7 +93,7 @@
 
     <EditText
         android:id="@+id/edt_detail"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded"
@@ -108,7 +108,7 @@
 
     <Button
         android:id="@+id/btn_tambah"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="65dp"
         android:backgroundTint="@color/secondary"
         android:text="@string/tambah"
