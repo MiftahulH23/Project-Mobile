@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SaranFragment">
+    tools:context=".LaporanFragment">
     <include
         android:id="@+id/header_laporan"
         layout="@layout/header_laporan"
@@ -130,7 +130,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/img_laporan2"
                 />
-
             <TextView
                 android:id="@+id/tgl_laporan2"
                 android:layout_width="wrap_content"
@@ -142,7 +141,6 @@
                 app:layout_constraintLeft_toRightOf="@id/img_laporan2"
                 app:layout_constraintTop_toBottomOf="@+id/jdl_laporan2"
                 />
-
             <TextView
                 android:id="@+id/desc_laporan2"
                 android:layout_marginTop="8dp"
@@ -256,6 +254,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btntambahlaporan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:strokeWidth="2dp"

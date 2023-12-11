@@ -24,4 +24,6 @@ class LaporanFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_laporan, container, false)
     }
+
+
 }
