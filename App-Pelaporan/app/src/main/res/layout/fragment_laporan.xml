@@ -233,7 +233,7 @@
                 />
 
             <ImageView
-                android:id="@+id/ic_edit3"
+                android:id="@+id/ic_edit4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"

@@ -1,29 +1,31 @@
 package com.example.app_pelaporan
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LaporanFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.app_pelaporan.databinding.FragmentLaporanBinding
 class LaporanFragment : Fragment() {
+    private lateinit var binding: FragmentLaporanBinding
+    lateinit var tambahlaporan : TambahLaporanFragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_laporan, container, false)
+        binding = FragmentLaporanBinding.inflate(layoutInflater)
+        binding.btntambahlaporan.setOnClickListener{
+            val tambahFragmen = TambahLaporanFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container,tambahFragmen)
+            transaction.commit()
+        }
+        return binding.root
     }
+
+
 
 
 }
