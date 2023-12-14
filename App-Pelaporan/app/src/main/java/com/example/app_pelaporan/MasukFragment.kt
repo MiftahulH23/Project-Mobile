@@ -1,27 +1,35 @@
 package com.example.app_pelaporan
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.app_pelaporan.databinding.FragmentMasukBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MasukFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MasukFragment : Fragment() {
+    lateinit var binding: FragmentMasukBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_masuk, container, false)
+        binding = FragmentMasukBinding.inflate(layoutInflater)
+        binding.btnMasuk.setOnClickListener(){
+            val i = Intent(context, MainActivity::class.java)
+            startActivity(i)
+        }
+        binding.tvDaftar.setOnClickListener{
+            val daftarFragment = DaftarFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.sp_container,daftarFragment)
+            transaction.commit()
+        }
+        return binding.root
     }
+
+
 }

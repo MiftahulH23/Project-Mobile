@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.app_pelaporan.databinding.FragmentLaporanBinding
 class LaporanFragment : Fragment() {
     private lateinit var binding: FragmentLaporanBinding
-    lateinit var tambahlaporan : TambahLaporanFragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

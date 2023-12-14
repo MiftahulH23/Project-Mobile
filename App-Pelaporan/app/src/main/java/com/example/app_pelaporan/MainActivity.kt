@@ -1,7 +1,7 @@
 package com.example.app_pelaporan
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.app_pelaporan.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         changeFragment(BerandaFragment())
-
         binding.navbar.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.tab_home -> changeFragment(BerandaFragment())
@@ -26,9 +25,10 @@ class MainActivity : AppCompatActivity() {
     private fun changeFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-
         fragmentTransaction.replace(R.id.container, fragment)
         fragmentTransaction.commit()
     }
+
+
 
 }
