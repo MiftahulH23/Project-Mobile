@@ -1,28 +1,93 @@
 package com.example.app_pelaporan
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.example.app_pelaporan.databinding.FragmentDaftarBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
+class DaftarFragment : Fragment(R.layout.fragment_daftar) {
 
-class DaftarFragment : Fragment() {
-    lateinit var binding: FragmentDaftarBinding
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentDaftarBinding.inflate(layoutInflater)
-        binding.tvMasuk.setOnClickListener(){
-            val masukFragment = MasukFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.sp_container,masukFragment)
-            transaction.commit()
+    private lateinit var auth: FirebaseAuth
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        auth = Firebase.auth
+
+        // Inisialisasi elemen-elemen UI
+        val namaEditText: EditText = view.findViewById(R.id.df_nama)
+        val telpEditText: EditText = view.findViewById(R.id.df_email)
+        val alamatEditText: EditText = view.findViewById(R.id.df_alamat)
+        val passwordEditText: EditText = view.findViewById(R.id.df_password)
+        val btnDaftar: Button = view.findViewById(R.id.btn_daftar)
+
+        // Set listener untuk tombol daftar
+        btnDaftar.setOnClickListener {
+            val nama = namaEditText.text.toString().trim()
+            val email = telpEditText.text.toString().trim()
+            val alamat = alamatEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+
+            // Validasi input sebelum pendaftaran
+            if (nama.isEmpty() || email.isEmpty() || alamat.isEmpty() || password.isEmpty()) {
+                Toast.makeText(requireContext(), "Harap isi semua kolom", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Proses pendaftaran ke Firebase Authentication
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        // Pendaftaran berhasil
+                        val user = auth.currentUser
+                        val userId = user?.uid // atau dapatkan ID pengguna dari hasil pendaftaran
+
+                        // Menyimpan informasi pengguna ke Realtime Database
+                        val database = FirebaseDatabase.getInstance()
+                        val reference = database.getReference("User") // Ganti dengan lokasi yang benar di database Anda
+
+                        val userData = HashMap<String, Any>()
+                        userData["email"] = email
+                        userData["nama"] = nama
+                        userData["alamat"] = alamat
+                        userData["password"] = password
+                        userData["role"] = "admin" // Atur peran pengguna sesuai kebutuhan Anda
+
+                        userId?.let {
+                            reference.child(it).setValue(userData)
+                                .addOnSuccessListener {
+                                    // Data pengguna berhasil disimpan ke database
+                                    Toast.makeText(requireContext(), "Pendaftaran berhasil!", Toast.LENGTH_SHORT).show()
+                                    // Redirect ke halaman utama setelah pendaftaran berhasil
+                                    // Redirect ke halaman utama setelah pendaftaran berhasil
+                                    val masukFragment = MasukFragment()
+                                    val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+
+                                    if (!requireActivity().isFinishing && !requireActivity().isDestroyed) {
+                                        transaction.replace(R.id.sp_container, masukFragment)
+                                        transaction.commit()
+                                    }
+
+                                }
+                                .addOnFailureListener { e ->
+                                    // Gagal menyimpan data pengguna ke database
+                                    Toast.makeText(requireContext(), "Gagal menyimpan data pengguna: ${e.message}", Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                    } else {
+                        // Pendaftaran gagal, tampilkan pesan kesalahan
+                        val exception = task.exception
+                        Toast.makeText(requireContext(), "Pendaftaran gagal: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
         }
-        return binding.root
     }
 }

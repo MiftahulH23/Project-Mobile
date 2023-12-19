@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "87059216840",
+    "firebase_url": "https://project-uas-5bcca-default-rtdb.firebaseio.com",
+    "project_id": "project-uas-5bcca",
+    "storage_bucket": "project-uas-5bcca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87059216840:android:1c26a5e07e9cf0bdd0e8fd",
+        "android_client_info": {
+          "package_name": "com.example.app_pelaporan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx_SUxAMUrgQoht9FWkEi1ynqqSUSNrYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

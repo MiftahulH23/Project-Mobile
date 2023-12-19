@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App-Pelaporan</string>
+    <string name="app_name">App</string>
     <string name="username">Raull</string>
     <string name="keterangan">Ada 4 update infromasi terbaru buat kamu</string>
     <string name="keterangan1">ayo berikan laporan anda mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
@@ -16,7 +16,8 @@
     <string name="ketmasuk">Bagikan aspirasi anda sekarang!</string>
     <string name="ketdaftar">Silahkan isi data diri anda</string>
     <string name="dafnama">Masukkan Nama Lengkap</string>
-    <string name="dafnotelp">Masukkan Nomor Telpon</string>
+    <string name="dafnotelp">Masukkan Email</string>
+    <string name="dafrole">Pilih Role</string>
     <string name="dafalamat">Masukkan Alamat Anda</string>
     <string name="dafpassword">Masukkan Password</string>
     <string name="jdlLaporan">Judul Laporan</string>

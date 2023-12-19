@@ -5,23 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TambahLaporanFragment">
+    tools:context=".TambahSaranFragment">
     <include
-        android:id="@+id/header_laporan"
-        layout="@layout/header_laporan"
+        android:id="@+id/header_saran"
+        layout="@layout/header_saran"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tx1"
         />
-
     <TextView
         android:id="@+id/tx1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buatlaporan"
+        android:text="@string/buatsaran"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/header_laporan"
+        app:layout_constraintTop_toBottomOf="@+id/header_saran"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
@@ -30,7 +29,7 @@
         android:id="@+id/tx2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jdlLaporan"
+        android:text="@string/jdlSaran"
         android:textSize="18sp"
         android:layout_marginTop="16dp"
         android:textStyle="bold"
@@ -47,7 +46,7 @@
         android:backgroundTint="@color/smoothgray"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:text="@string/inplaporan"
+        android:hint="@string/inpsaran"
         android:textColor="@color/textgray"
         android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -83,7 +82,7 @@
         android:id="@+id/tx4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/detaillaporan"
+        android:text="@string/detailsaran"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
