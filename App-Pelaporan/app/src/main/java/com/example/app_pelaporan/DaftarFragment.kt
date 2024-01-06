@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -18,15 +19,14 @@ class DaftarFragment : Fragment(R.layout.fragment_daftar) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         auth = Firebase.auth
-
         // Inisialisasi elemen-elemen UI
         val namaEditText: EditText = view.findViewById(R.id.df_nama)
         val telpEditText: EditText = view.findViewById(R.id.df_email)
         val alamatEditText: EditText = view.findViewById(R.id.df_alamat)
         val passwordEditText: EditText = view.findViewById(R.id.df_password)
         val btnDaftar: Button = view.findViewById(R.id.btn_daftar)
+        val textMasuk : TextView = view.findViewById(R.id.tvdf_masuk)
 
         // Set listener untuk tombol daftar
         btnDaftar.setOnClickListener {
@@ -47,25 +47,24 @@ class DaftarFragment : Fragment(R.layout.fragment_daftar) {
                     if (task.isSuccessful) {
                         // Pendaftaran berhasil
                         val user = auth.currentUser
-                        val userId = user?.uid // atau dapatkan ID pengguna dari hasil pendaftaran
+                        val userId = user?.uid
 
                         // Menyimpan informasi pengguna ke Realtime Database
                         val database = FirebaseDatabase.getInstance()
-                        val reference = database.getReference("User") // Ganti dengan lokasi yang benar di database Anda
+                        val reference = database.getReference("User")
 
                         val userData = HashMap<String, Any>()
                         userData["email"] = email
                         userData["nama"] = nama
                         userData["alamat"] = alamat
                         userData["password"] = password
-                        userData["role"] = "admin" // Atur peran pengguna sesuai kebutuhan Anda
+                        userData["role"] = "user" // Atur peran pengguna
 
                         userId?.let {
                             reference.child(it).setValue(userData)
                                 .addOnSuccessListener {
                                     // Data pengguna berhasil disimpan ke database
                                     Toast.makeText(requireContext(), "Pendaftaran berhasil!", Toast.LENGTH_SHORT).show()
-                                    // Redirect ke halaman utama setelah pendaftaran berhasil
                                     // Redirect ke halaman utama setelah pendaftaran berhasil
                                     val masukFragment = MasukFragment()
                                     val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -88,6 +87,12 @@ class DaftarFragment : Fragment(R.layout.fragment_daftar) {
                     }
                 }
 
+        }
+        textMasuk.setOnClickListener{
+            val masuk = MasukFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.sp_container ,masuk)
+            transaction.commit()
         }
     }
 }

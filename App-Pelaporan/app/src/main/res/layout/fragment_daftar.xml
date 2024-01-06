@@ -137,7 +137,7 @@
             android:textColor="@color/textgray"
             />
         <TextView
-            android:id="@+id/tv_masuk"
+            android:id="@+id/tvdf_masuk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/masuk"

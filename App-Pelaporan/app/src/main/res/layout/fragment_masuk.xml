@@ -63,7 +63,7 @@
         android:backgroundTint="@color/smoothgray"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:text="@string/dafnotelp"
+        android:hint="@string/dafnotelp"
         android:textColor="@color/textgray"
         android:textSize="12sp"
         app:layout_constraintHorizontal_bias="0.504"
@@ -75,7 +75,7 @@
         android:id="@+id/ms_password"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="@string/dafpassword"
+        android:hint="@string/dafpassword"
         android:background="@drawable/rounded"
         android:backgroundTint="@color/smoothgray"
         android:paddingHorizontal="20dp"
@@ -116,7 +116,7 @@
             android:textColor="@color/textgray"
             />
         <TextView
-            android:id="@+id/tv_daftar"
+            android:id="@+id/tvms_daftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/daftar"

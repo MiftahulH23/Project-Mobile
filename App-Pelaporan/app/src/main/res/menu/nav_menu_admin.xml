@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_home_admin"
+        android:icon="@drawable/ic_home"
+        android:title="@string/beranda"
+        android:contentDescription="@string/beranda"
+        />
+    <item
+        android:id="@+id/tab_laporan_admin"
+        android:icon="@drawable/ic_book"
+        android:title="@string/laporan"
+        android:contentDescription="@string/laporan"
+        />
+    <item
+        android:id="@+id/tab_saran_admin"
+        android:icon="@drawable/ic_lamp"
+        android:title="@string/saran"
+        android:contentDescription="@string/saran"
+        />
+</menu>

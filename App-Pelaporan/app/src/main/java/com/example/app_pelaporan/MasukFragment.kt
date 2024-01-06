@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -28,7 +29,7 @@ class MasukFragment : Fragment(R.layout.fragment_masuk) {
         val telpEditText: EditText = view.findViewById(R.id.ms_telp)
         val passwordEditText: EditText = view.findViewById(R.id.ms_password)
         val btnMasuk: Button = view.findViewById(R.id.btn_masuk)
-        val tvDaftar: TextView = view.findViewById(R.id.tv_daftar)
+        val tvDaftar: TextView = view.findViewById(R.id.tvms_daftar)
 
         // Set listener untuk tombol masuk
         btnMasuk.setOnClickListener {
@@ -41,8 +42,6 @@ class MasukFragment : Fragment(R.layout.fragment_masuk) {
                 return@setOnClickListener
             }
 
-            // Proses masuk dengan Firebase Authentication
-            // ...
             auth.signInWithEmailAndPassword(telp, password)
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
@@ -58,15 +57,13 @@ class MasukFragment : Fragment(R.layout.fragment_masuk) {
                                 val role = snapshot.child("role").value.toString()
 
                                 if (role == "admin") {
-                                    // Redirect ke MainActivity jika rolenya adalah admin
                                     val intent = Intent(requireContext(), MainActivity::class.java)
                                     startActivity(intent)
-                                    requireActivity().finish() // Tutup activity saat ini agar tidak kembali ke halaman masuk
+                                    requireActivity().finish()
                                 } else {
-                                    // Redirect ke SplashActivity jika rolenya bukan admin
-                                    val intent = Intent(requireContext(), SplashActivity::class.java)
+                                    val intent = Intent(requireContext(), MainActivityAdmin::class.java)
                                     startActivity(intent)
-                                    requireActivity().finish() // Tutup activity saat ini agar tidak kembali ke halaman masuk
+                                    requireActivity().finish()
                                 }
                             }.addOnFailureListener { e ->
                                 // Gagal mendapatkan informasi role pengguna
@@ -87,13 +84,11 @@ class MasukFragment : Fragment(R.layout.fragment_masuk) {
                 }
 
         }
-
-        // Listener untuk tombol daftar (redirect ke halaman daftar)
-        tvDaftar.setOnClickListener {
-            // Redirect ke halaman daftar jika tombol daftar ditekan
-            // Misalnya:
-            // val intent = Intent(requireContext(), DaftarActivity::class.java)
-            // startActivity(intent)
+        tvDaftar.setOnClickListener{
+            val daftar = DaftarFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.sp_container, daftar)
+            transaction.commit()
         }
     }
 }
