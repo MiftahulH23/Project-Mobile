@@ -31,7 +31,7 @@ class BerandaAdminFragment : Fragment() {
         }
         binding.imgUser.setOnClickListener{
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.container_adm,AkunFragment())
+            transaction.replace(R.id.container_adm,AkunAdminFragment())
             transaction.commit()
         }
         binding.btnCeksaran.setOnClickListener{

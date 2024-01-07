@@ -22,7 +22,7 @@ class LaporanFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLaporanBinding.inflate(inflater, container, false)
+        binding = FragmentLaporanBinding.inflate(layoutInflater)
         binding.btntambahlaporan.setOnClickListener{
             val tambahFragmen = TambahLaporanFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()

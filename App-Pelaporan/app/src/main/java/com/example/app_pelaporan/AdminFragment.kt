@@ -6,54 +6,55 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.example.app_pelaporan.databinding.FragmentSaranAdminBinding
+import com.example.app_pelaporan.databinding.FragmentAdminBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class SaranAdminFragment : Fragment() {
-    lateinit var binding: FragmentSaranAdminBinding
-    private lateinit var saranList: MutableList<Saran>
-    private lateinit var ref: DatabaseReference
 
+class AdminFragment : Fragment() {
+    lateinit var binding: FragmentAdminBinding
+    private lateinit var userList: MutableList<User>
+    private lateinit var ref: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSaranAdminBinding.inflate(layoutInflater)
-        binding.imgUser.setOnClickListener{
+        binding = FragmentAdminBinding.inflate(layoutInflater)
+        binding.btnTambahuser.setOnClickListener {
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.container_adm,AkunAdminFragment())
+            transaction.replace(R.id.container_adm, TambahAdminFragment())
             transaction.commit()
         }
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ref = FirebaseDatabase.getInstance().getReference("saran")
-        saranList = mutableListOf()
+        ref = FirebaseDatabase.getInstance().getReference("user")
+        userList = mutableListOf()
 
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (isAdded) {
+                if (isAdded) { // Pastikan Fragment terpasang sebelum menggunakan requireActivity()
                     if (snapshot.exists()) {
-                        saranList.clear()
+                        userList.clear()
                         for (a in snapshot.children) {
-                            val laporan = a.getValue(Saran::class.java)
-                            laporan?.let {
-                                saranList.add(it)
+                            val anggota = a.getValue(User::class.java)
+                            anggota?.let {
+                                userList.add(it)
                             }
                         }
-                        val adapter = SaranAdminAdapter(
+                        val adapter = UserAdapter(
                             requireActivity(),
-                            R.layout.item_saran_admin_layout,
-                            saranList
+                            R.layout.item_user,
+                            userList
                         )
                         binding.lvOutput.adapter = adapter
-                        println("Output: " + saranList)
+                        println("Output: " + userList)
                     }
                 }
             }
@@ -63,4 +64,6 @@ class SaranAdminFragment : Fragment() {
             }
         })
     }
+
+
 }

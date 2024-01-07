@@ -24,7 +24,7 @@ class LaporanAdminFragment : Fragment() {
         binding = FragmentLaporanAdminBinding.inflate(inflater, container, false)
         binding.imgUser.setOnClickListener{
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.container_adm,AkunFragment())
+            transaction.replace(R.id.container_adm,AkunAdminFragment())
             transaction.commit()
         }
         return binding.root
