@@ -31,6 +31,11 @@ class SaranFragment : Fragment() {
             transaction.replace(R.id.container,tambahSaran)
             transaction.commit()
         }
+        binding.imgUser.setOnClickListener{
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container,AkunFragment())
+            transaction.commit()
+        }
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

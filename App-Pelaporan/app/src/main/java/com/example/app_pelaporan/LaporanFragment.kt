@@ -29,6 +29,11 @@ class LaporanFragment : Fragment() {
             transaction.replace(R.id.container,tambahFragmen)
             transaction.commit()
         }
+        binding.imgUser.setOnClickListener{
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container,AkunFragment())
+            transaction.commit()
+        }
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

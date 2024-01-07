@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.app_pelaporan.databinding.FragmentLaporanAdminBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,6 +22,11 @@ class LaporanAdminFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLaporanAdminBinding.inflate(inflater, container, false)
+        binding.imgUser.setOnClickListener{
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container_adm,AkunFragment())
+            transaction.commit()
+        }
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
