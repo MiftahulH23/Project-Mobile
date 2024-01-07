@@ -77,10 +77,10 @@ class TambahLaporanFragment : Fragment(), View.OnClickListener {
         }
 
         val laporanId = ref.push().key
-        val loker = Laporan(laporanId!!, nama, jenisInfrastruktur, namaKecamatan, faktorKerusakan, tanggal, tingkatKerusakan, tingkatDampak)
+        val laporan = Laporan(laporanId!!, nama, jenisInfrastruktur, namaKecamatan, faktorKerusakan, tanggal, tingkatKerusakan, tingkatDampak)
 
         laporanId?.let {
-            ref.child(it).setValue(loker).addOnCompleteListener { task ->
+            ref.child(it).setValue(laporan).addOnCompleteListener { task ->
                 if(isAdded) {
                     if (task.isSuccessful) {
                         Toast.makeText(

@@ -65,7 +65,4 @@ class LaporanFragment : Fragment() {
         })
     }
 
-
-
-
 }

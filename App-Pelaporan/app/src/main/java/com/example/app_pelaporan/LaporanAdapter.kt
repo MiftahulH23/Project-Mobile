@@ -99,7 +99,7 @@ class LaporanAdapter(
                 Toast.makeText(laporanContext, "Isi data dengan angka secara lengkap", Toast.LENGTH_SHORT).show()
             } else {
                 // Proses update data
-                val updatedLaporan = Laporan(laporan.id, nama, tanggal, jenis, faktor, kecamatan, tingkatKerusakan, tingkatDampak)
+                val updatedLaporan = Laporan(laporan.id, nama, jenis, kecamatan, faktor, tanggal, tingkatKerusakan, tingkatDampak)
                 dbLaporan.child(laporan.id).setValue(updatedLaporan)
                 Toast.makeText(laporanContext, "Data Berhasil diupdate", Toast.LENGTH_SHORT).show()
             }

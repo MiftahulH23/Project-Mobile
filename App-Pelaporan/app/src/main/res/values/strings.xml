@@ -3,7 +3,11 @@
     <string name="username">Raull</string>
     <string name="keterangan">Ada 4 update infromasi terbaru buat kamu</string>
     <string name="keterangan1">ayo berikan laporan anda mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
+    <string name="keterangan2">ayo cek laporan  mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
+    <string name="keterangan3">ayo cek saran  mengenaikan infrastruktur yang rusak demi tersedia infrastruktur yang  nyaman </string>
     <string name="laporkan">Laporkan !</string>
+    <string name="ceklaporan">Cek Laporan !</string>
+    <string name="ceksaran">Cek Saran !</string>
     <string name="ketlaporan">Daftar laporan anda</string>
     <string name="ketsaran">Daftar saran anda</string>
     <string name="berita1">Pemerintah Kota Pekanbaru kembali memperbaiki jalan bangau sakti setelah ada laporan dari warga</string>
