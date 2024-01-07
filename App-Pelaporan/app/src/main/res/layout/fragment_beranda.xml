@@ -7,12 +7,59 @@
     android:layout_height="match_parent"
     tools:context=".BerandaFragment">
 
-    <include
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
-        layout="@layout/header"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/card1"
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+        <TextView
+            android:id="@+id/ket"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/keterangan"
+            android:layout_marginTop="3dp"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/user"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profil"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_notifikasi"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintRight_toLeftOf="@+id/img_user"
+            android:layout_marginRight="10dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <RelativeLayout
         android:id="@+id/card1"
         android:layout_width="match_parent"
@@ -81,7 +128,7 @@
         android:id="@+id/berita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Berita Hari Ini"
+        android:text="Berita"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
@@ -89,69 +136,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
-    <RelativeLayout
-        android:id="@+id/card3"
+    <ListView
+        android:id="@+id/lv_output"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/berita"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:background="@drawable/rounded_white"
-        android:layout_marginTop="30dp"
-        android:padding="13dp"
-        >
-        <TextView
-            android:id="@+id/berita1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/berita1"
-            android:textColor="@color/textPrimary"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            />
-
-        <TextView
-            android:id="@+id/tgl1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tgl1"
-            android:layout_below="@+id/berita1"
-            android:textColor="@color/textPrimary"
-            android:textSize="10sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/card4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/card3"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:background="@drawable/rounded_white"
-        android:layout_marginTop="20dp"
-        android:padding="13dp"
-        >
-        <TextView
-            android:id="@+id/berita2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/berita1"
-            android:textColor="@color/textPrimary"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            />
-
-        <TextView
-            android:id="@+id/tgl2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tgl1"
-            android:layout_below="@+id/berita2"
-            android:textColor="@color/textPrimary"
-            android:textSize="10sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
-            />
-    </RelativeLayout>
+        android:layout_height="220dp"
+        android:layout_marginTop="12dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/berita" />
 </androidx.constraintlayout.widget.ConstraintLayout>
