@@ -34,7 +34,7 @@ class AdminFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ref = FirebaseDatabase.getInstance().getReference("user")
+        ref = FirebaseDatabase.getInstance().getReference("User")
         userList = mutableListOf()
 
         ref.addValueEventListener(object : ValueEventListener {
@@ -43,8 +43,8 @@ class AdminFragment : Fragment() {
                     if (snapshot.exists()) {
                         userList.clear()
                         for (a in snapshot.children) {
-                            val anggota = a.getValue(User::class.java)
-                            anggota?.let {
+                            val user = a.getValue(User::class.java)
+                            user?.let {
                                 userList.add(it)
                             }
                         }

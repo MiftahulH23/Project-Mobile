@@ -51,9 +51,9 @@ class TambahAdminFragment : Fragment(R.layout.fragment_tambah_admin) {
 
                         // Menyimpan informasi pengguna ke Realtime Database
                         val database = FirebaseDatabase.getInstance()
-                        val reference = database.getReference("user")
+                        val reference = database.getReference("User")
 
-                        val userData = User(userId!!, email, nama, password,alamat, role= "admin")
+                        val userData = User(userId!!, email, nama, alamat,password, role= "admin")
 
                         userId?.let {
                             reference.child(it).setValue(userData)

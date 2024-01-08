@@ -85,8 +85,8 @@ class AkunAdminFragment : Fragment() {
                             val username = snapshot.child("nama").getValue(String::class.java)
                             val alamat = snapshot.child("alamat").getValue(String::class.java)
 
-                            binding.usernameAkun.setText(email)
-                            binding.emailAkun.setText(username)
+                            binding.usernameAkun.setText(username)
+                            binding.emailAkun.setText(email)
                             binding.lokasiAkun.setText(alamat)
 
 

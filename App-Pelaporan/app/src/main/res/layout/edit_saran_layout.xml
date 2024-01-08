@@ -73,7 +73,6 @@
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:text="Masukkan tanggal"
-        android:inputType="date"
         android:textColor="@color/textgray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tx5" />

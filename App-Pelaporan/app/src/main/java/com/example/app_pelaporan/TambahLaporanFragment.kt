@@ -20,6 +20,11 @@ class TambahLaporanFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentTambahLaporanBinding.inflate(inflater, container, false)
+        binding.imgUser.setOnClickListener{
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container,AkunAdminFragment())
+            transaction.commit()
+        }
         return binding.root
     }
 
